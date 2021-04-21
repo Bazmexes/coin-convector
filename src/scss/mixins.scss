@@ -1,0 +1,74 @@
+@mixin fullhd {
+  @media (min-width: $fullhd) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) and (max-width: $desktop-max){
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $laptop-max) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet-max) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile-max) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media (max-width: $mobile-small-max) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+@mixin transition($args...) {
+  transition-property: $args;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+}
+
+@mixin transition-long($args...) {
+  transition-property: $args;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+@mixin hover {
+  @media (min-width: $tablet-max) {
+    &:hover {
+      @content;
+    }
+  }
+}

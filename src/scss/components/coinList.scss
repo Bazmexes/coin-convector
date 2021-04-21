@@ -1,0 +1,86 @@
+.coin-list {
+  width: 100%;
+  position: relative;
+  padding: 10px 15px;
+  background-color: $color-white;
+  border-radius: 0 0 5px 5px;
+}
+
+.coin-list__form {
+  width: 100%;
+
+  input {
+    width: 100%;
+    padding: 10px 15px;
+    outline: none;
+    border: solid 1px $color-silver;
+  }
+}
+
+.coin-list__filter {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  width: calc(100% - 30px);
+  background-color: $color-white;
+  border: solid 1px $color-silver;
+  border-radius: 0 0 5px 5px;
+  transform: translateY(calc(100% - 38px));
+  max-height: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-top: none;
+  opacity: 0;
+  @include transition(max-height, opacity);
+
+  &--active {
+    max-height: 300px;
+    opacity: 1;
+  }
+}
+
+.coin-list__filter-item {
+  padding: 10px 15px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  @include transition(background-color);
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-silver;
+  }
+}
+
+.coin-list__current-coin {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px 0 15px;
+}
+
+.coin-condition {
+  color: $color-green;
+  position: relative;
+  width: 60px;
+  padding-left: 20px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc(50% - 7.5px);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 7.5px 15px 7.5px;
+    border-color: transparent transparent $color-green transparent;
+  }
+
+  &--red {
+    color: $color-red;
+    &:before {
+      transform: rotate(180deg);
+      border-color: transparent transparent $color-red transparent;
+    }
+  }
+}

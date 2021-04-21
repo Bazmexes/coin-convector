@@ -1,10 +1,14 @@
-@import "normalize";
-
 // Пример подключения стилей плагинов
 //@import "node_modules/swiper/swiper-bundle";
 
 
 // General
-@import "variables";
-@import "mixins";
-@import "custom-reset";
+@import "scss/variables";
+@import "scss/mixins";
+@import "scss/custom-reset";
+
+
+// components
+@import "scss/components/layout";
+@import "scss/components/header";
+@import "scss/components/coinList";
